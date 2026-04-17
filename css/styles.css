@@ -275,7 +275,8 @@ footer {
 
 /* TITLE */
 .header-left h1 {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
+  margin: 0;
 }
 
 /* NAV RIGHT */
@@ -298,8 +299,151 @@ nav a {
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
+
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #09142b;
+  color: white;
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
 .site-logo {
-  width: 60px;
+  width: 265px;
   height: auto;
   display: block;
+}
+
+.header-left h1 {
+  font-size: 1.9rem;
+  margin: 0;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: #f5c542;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #f5c542;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 1rem;
+    background: #09142b;
+    padding: 0.5rem 0;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .main-nav a {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .header-left h1 {
+    font-size: 1.3rem;
+  }
+
+  .site-logo {
+    width: 75px;
+  }
+}
+.contact-page {
+  width: min(900px, 92%);
+  margin: 2rem auto;
+}
+
+.contact-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.contact-box h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-box p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font: inherit;
+}
+
+.contact-form button {
+  background: #8b0000;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background: #a30000;
+}
+@media (max-width: 768px) {
+  .header-left {
+    gap: 10px;
+  }
+
+  .site-header {
+    padding: 1rem;
+  }
 }
