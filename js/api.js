@@ -1,19 +1,20 @@
-const API_URL = "https://api.pokemontcg.io/v2/cards?q=name:"; 
-// Replace this with your real One Piece API endpoint later
+const BASE_URL = "https://optcgapi.com/api";
 
-export async function searchCards(cardName) {
-  try {
-    const response = await fetch(`${API_URL}${cardName}`);
+export async function getAllSetCards() {
+  const response = await fetch(`${BASE_URL}/allSetCards/`);
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch card data.");
-    }
-
-    const data = await response.json();
-
-    return data.data || [];
-  } catch (error) {
-    console.error("API error:", error);
-    throw error;
+  if (!response.ok) {
+    throw new Error("Could not load cards.");
   }
+
+  return await response.json();
+}
+
+export async function searchCardsByName(searchText) {
+  const cards = await getAllSetCards();
+  const query = searchText.trim().toLowerCase();
+
+  return cards.filter((card) =>
+    card.card_name?.toLowerCase().includes(query)
+  );
 }

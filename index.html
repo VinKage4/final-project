@@ -11,27 +11,41 @@
   <header>
     <h1>Grand Line Card Vault</h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="favorites.html">Favorites</a>
-      <a href="collection.html">Collection</a>
-    </nav>
+  <a href="index.html">Home</a>
+  <a href="favorites.html">Favorites</a>
+  <a href="cart.html">Cart</a>
+  <a href="collection.html">Collection</a>
+</nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h2>Search One Piece Cards</h2>
-      <p>Build your favorites, wishlist, and collection in one place.</p>
-    </section>
+  <section class="hero">
+    <h2>Browse One Piece Cards and Prices</h2>
+    <p>Search cards, save favorites, add items to cart, and build your collection.</p>
+  </section>
 
-    <section class="search-section">
-      <input type="text" id="searchInput" placeholder="Search card by name..." />
-      <button id="searchBtn">Search</button>
-    </section>
+  <section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search card by name..." />
+    <button id="searchBtn">Search</button>
+    <button id="resetBtn">Reset</button>
+  </section>
 
-    <section id="message"></section>
+  <section class="filter-section">
+    <select id="sortSelect">
+      <option value="default">Sort By</option>
+      <option value="name-asc">Name A-Z</option>
+      <option value="name-desc">Name Z-A</option>
+      <option value="price-low">Price Low to High</option>
+      <option value="price-high">Price High to Low</option>
+    </select>
+  </section>
 
-    <section id="cardResults" class="card-grid"></section>
-  </main>
+  <section id="message"></section>
+
+  <section id="cardResults" class="card-grid"></section>
+
+  <section id="pagination" class="pagination"></section>
+</main>
 
   <footer>
     <p>&copy; 2026 Grand Line Card Vault</p>

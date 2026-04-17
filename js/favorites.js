@@ -1,4 +1,13 @@
-import { getFavorites, removeFavorite } from "./storage.js";
+import {
+  getFavorites,
+  removeFavorite,
+  addToCart
+} from "./storage.js";
+
+function formatPrice(value) {
+  const number = Number(value);
+  return Number.isNaN(number) ? "N/A" : `$${number.toFixed(2)}`;
+}
 
 function displayFavorites() {
   const container = document.getElementById("favoritesList");
@@ -16,16 +25,25 @@ function displayFavorites() {
     article.classList.add("card");
 
     article.innerHTML = `
-      <img src="${card.images?.small || ""}" alt="${card.name}" />
-      <h3>${card.name}</h3>
-      <p><strong>Type:</strong> ${card.supertype || "Unknown"}</p>
-      <p><strong>Set:</strong> ${card.set?.name || "Unknown"}</p>
-      <button>Remove</button>
+      <img src="${card.card_image}" alt="${card.card_name}" loading="lazy" />
+      <h3>${card.card_name}</h3>
+      <p><strong>Set:</strong> ${card.set_name || "Unknown"}</p>
+      <p><strong>Market Price:</strong> ${formatPrice(card.market_price)}</p>
+
+      <div class="card-actions">
+        <button class="cart-btn">Move to Cart</button>
+        <button class="remove-btn">Remove</button>
+      </div>
     `;
 
-    const button = article.querySelector("button");
-    button.addEventListener("click", () => {
-      removeFavorite(card.id);
+    article.querySelector(".cart-btn").addEventListener("click", () => {
+      addToCart(card);
+      removeFavorite(card.card_image_id);
+      displayFavorites();
+    });
+
+    article.querySelector(".remove-btn").addEventListener("click", () => {
+      removeFavorite(card.card_image_id);
       displayFavorites();
     });
 
