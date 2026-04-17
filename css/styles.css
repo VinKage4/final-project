@@ -142,14 +142,17 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .search-section {
+  .site-header {
     flex-direction: column;
-    align-items: center;
+    gap: 10px;
   }
 
-  .search-section input {
-    width: 100%;
-    max-width: 350px;
+  .header-left {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
   }
 }
 
@@ -246,4 +249,57 @@ footer {
 .cart-summary {
   text-align: center;
   margin-top: 2rem;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+}
+
+/* LEFT SIDE (logo + title) */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* LOGO LEFT */
+.site-logo {
+  width: 60px;
+  height: auto;
+}
+
+/* TITLE */
+.header-left h1 {
+  font-size: 1.5rem;
+}
+
+/* NAV RIGHT */
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-logo:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+.site-header {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.site-logo {
+  width: 60px;
+  height: auto;
+  display: block;
 }
