@@ -1,5 +1,9 @@
+// ==============================
+// UI.JS
+// Responsible for displaying card data in the browser
+// ==============================
 import { saveFavorite, addToCart } from "./storage.js";
-
+// Format price into readable currency
 function formatPrice(value) {
   if (value === null || value === undefined || value === "") {
     return "N/A";
@@ -13,7 +17,7 @@ function formatPrice(value) {
 
   return `$${number.toFixed(2)}`;
 }
-
+// Display cards on the page
 export function displayCards(cards) {
   const results = document.getElementById("cardResults");
   results.innerHTML = "";
@@ -60,7 +64,7 @@ export function displayCards(cards) {
     results.appendChild(article);
   });
 }
-
+// Display messages (loading, errors, results)
 export function showMessage(text) {
   const message = document.getElementById("message");
   message.textContent = text;

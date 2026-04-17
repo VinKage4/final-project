@@ -1,3 +1,6 @@
+// COLLECTION.JS
+// Displays purchased cards stored in collection and allows removing them
+
 import { getCollection, removeFromCollection } from "./storage.js";
 
 function formatPrice(value) {

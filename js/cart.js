@@ -1,3 +1,5 @@
+// CART.JS
+// Displays cart items and handles purchasing logic
 import {
   getCart,
   removeFromCart,

@@ -1,3 +1,7 @@
+// ==============================
+// API.JS
+// Handles fetching card data from the One Piece API
+// ==============================
 const BASE_URL = "https://optcgapi.com/api";
 
 export async function getAllSetCards() {
